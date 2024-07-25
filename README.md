@@ -38,3 +38,4 @@ To stop:
 # Features
 
 - In the `http://localhost:5173/` route we can interact with the database unsafely. For the safe interaction demonstration use the `http://localhost:5173/safe` route.
+- Please look at the files in the tests directory for sample SQL injection tests
