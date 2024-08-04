@@ -41,9 +41,12 @@ function executeQuery(pool, query, params) {
 app.post("/unsafe/login", async (req, res) => {
   const { username, password } = req.body;
   try {
+    console.log(
+      `SELECT username, password, ssn, salary FROM User WHERE username="${username}" AND password="${password}";`
+    );
     const results = await executeQuery(
       db,
-      `SELECT username, password, ssn, salary FROM User WHERE username="${username}" AND password="${password}";`
+      `SELECT username, password, ssn, salary FROM User WHERE username="${username}" AND password="${password}";` //dont actually need the semicolon here that is why user1"# works
     );
     res.send(results);
   } catch (error) {
